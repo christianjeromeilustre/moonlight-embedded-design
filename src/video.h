@@ -19,4 +19,14 @@
 
 #include "limelight-common/Limelight.h"
 
-extern DECODER_RENDERER_CALLBACKS decoder_callbacks;
+extern DECODER_RENDERER_CALLBACKS *decoder_callbacks;
+
+void video_init();
+
+extern DECODER_RENDERER_CALLBACKS decoder_callbacks_fake;
+#ifdef HAVE_OMX
+extern DECODER_RENDERER_CALLBACKS decoder_callbacks_omx;
+#endif
+#ifdef HAVE_IMX
+extern DECODER_RENDERER_CALLBACKS decoder_callbacks_omx;
+#endif
