@@ -39,6 +39,7 @@ typedef struct _CONFIGURATION {
   char key_dir[4096];
   bool sops;
   bool localaudio;
+  bool fullscreen;
   struct input_config inputs[MAX_INPUTS];
   int inputsCount;
 } CONFIGURATION, *PCONFIGURATION;
