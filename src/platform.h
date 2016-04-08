@@ -33,9 +33,8 @@ PDECODER_RENDERER_CALLBACKS platform_get_video(enum platform system);
 PAUDIO_RENDERER_CALLBACKS platform_get_audio(enum platform system);
 bool platform_supports_hevc(enum platform system);
 
-#ifdef HAVE_FAKE
 extern DECODER_RENDERER_CALLBACKS decoder_callbacks_fake;
-#endif
+extern AUDIO_RENDERER_CALLBACKS audio_callbacks_fake;
 #ifdef HAVE_SDL
 extern DECODER_RENDERER_CALLBACKS decoder_callbacks_sdl;
 void sdl_loop();
