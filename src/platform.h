@@ -32,3 +32,6 @@ enum platform platform_check(char*);
 PDECODER_RENDERER_CALLBACKS platform_get_video(enum platform system);
 PAUDIO_RENDERER_CALLBACKS platform_get_audio(enum platform system);
 bool platform_supports_hevc(enum platform system);
+
+void platform_start(enum platform system);
+void platform_stop(enum platform system);
