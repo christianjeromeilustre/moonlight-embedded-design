@@ -22,11 +22,19 @@
 #include <stdbool.h>
 
 #define DISPLAY_FULLSCREEN 1
-#define ENABLE_HARDWARE_ACCELERATION 2
+#define ENABLE_HARDWARE_ACCELERATION_1 2
+#define ENABLE_HARDWARE_ACCELERATION_2 4
+
+#define INIT_EGL 1
+#define INIT_VDPAU 2
+#define INIT_VAAPI 3
 
 #ifdef HAVE_X11
-int x11_init(bool vdpau);
+int x11_init(bool vdpau, bool vaapi);
 extern DECODER_RENDERER_CALLBACKS decoder_callbacks_x11;
+#ifdef HAVE_VAAPI
+extern DECODER_RENDERER_CALLBACKS decoder_callbacks_x11_vaapi;
+#endif
 #ifdef HAVE_VDPAU
 extern DECODER_RENDERER_CALLBACKS decoder_callbacks_x11_vdpau;
 #endif
